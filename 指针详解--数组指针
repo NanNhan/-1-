@@ -1,0 +1,22 @@
+int main(void)
+{
+	int a[5] = {1,2,3,4,5};
+	//int *ptr = (int *)(&a + 1);
+	//printf("%d,%d\n",*(a+1),*ptr);
+	//printf("%d,%d",*(a + 1),*(ptr - 1));//怀疑内存是一个圈圈
+	return 0;
+}
+数组指针
+#include<stdio.h>
+int main()
+{
+	//int* p = NULL;//整型指针-指向整型的指针
+	//char* pc = NULL;//pc是字符指针-指向字符的指针
+	//int arr[10] = {0};//arr首元素地址，&arr[0]-首元素地址，&arr - 数组的地址
+	int arr[10] = {1,2,3,4,5,6,7,8,9,10};
+
+	int(*p)[10] ={&arr};//数组的地址要存起来
+	//p就是数组指针
+
+	return 0;
+}
