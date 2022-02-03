@@ -1,0 +1,80 @@
+#include<stdio.h>
+int main()
+{
+	//字符指针
+	char ch = 'w';
+	char* p = &ch;//指针变量里存字符地址
+	char* p2 = "abcdef";//首字符a的地址传给p2
+	//指针数组 - 数组 - 存放指针的数组
+	//int* arr[10];//每个元素都是int*类型
+	//数组指针
+	//int *p3;//整型指针 - 指向整型的指针
+	int arr[5] = {1,2,3,4,5};
+	int (*pa)[5] = &arr;//取出数组地址，pa就是一个数组指针，数组指针去掉 名字 剩下的就是指针类型
+
+	return 0;
+}
+
+数组参数与指针参数
+void text(int arr[3][5])
+{
+}
+void text3(int *arr)//error：整型指针用来存放整型指针的
+void text4(int **arr)//error：二级指针用来存放一级指针地址
+
+
+void text5(int (*arr)[5])//指向二维数组的第一行，五个整形元素的地址
+int main()
+{
+	int arr[3][5] = {0};
+	//text(arr);//二维数组传参
+	//text3(arr);
+	//text4(arr);
+	text5(arr);
+	return 0;
+}
+void text(int **p)
+{}
+
+int main()
+{
+	int *ptr;
+	int **pp = &ptr;
+	text(&ptr);
+	text(pp);
+	int *arr[10];
+	text(arr);//形参是二级指针，可以传指针数组
+	return 0;
+}
+数组指针是指向数组的指针
+
+函数指针是指向函数的指针
+int Add(int x,int y)
+{
+	int z;
+	z = x + y;
+	return z;
+}
+int main()
+{
+	int a = 10,b = 20;
+	int arr[10] = {0};
+	/*Add(a,b);
+
+	printf("%p\n",&Add);
+	printf("%p\n",Add);*/
+	//&函数名和函数名都是函数的地址
+	int (*pa)(int ,int) = Add;//函数指针形式
+	printf("%d\n",(*pa)(2,3));
+	return 0;
+}
+void Print(char* str)
+{
+	printf("%s\n",str);
+}
+int main()
+{
+	void (*p)(char*) = Print;
+	(*p)("I love WeiBing!");
+	return 0;
+}
