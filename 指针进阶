@@ -1,0 +1,118 @@
+//pf指针指向my_strcpy
+//char* my_strcpy(char* dest,const char* src)
+//{
+//
+//}
+//int main()
+//{
+//	char dest[13] = "a,b,c,d,e,f";
+//	char src[6] = "g,h,i";
+//	my_strcpy(dest,src);
+//	char*(*pf)(char*,const char*) = my_strcpy;
+//	return 0;
+//}
+//2.写一个函数指针数组pfArr，能存放4个my_strcpy函数的地址
+//void my_strcpy1(char*,const char*)
+//{
+//
+//}
+//void my_strcpy2(char*,const char*)
+//{
+//
+//}
+//void my_strcpy3(char*,const char*)
+//{
+//
+//}
+//void my_strcpy4(char*,const char*)
+//{
+//
+//}
+//int main()
+//{
+//	char*(*pfArr[4])(char*,const char*);
+//	return 0;
+//}
+
+//void menu()
+//{
+//	printf("**********************\n");
+//	printf("**1.add        2.sub**\n");
+//	printf("**3.mul        4.div**\n");
+//	printf("********0.退出*********");
+//}
+//int add(int x ,int y)
+//{
+//	return x + y;
+//}
+//int sub(int x,int y)
+//{
+//	return x - y;
+//}
+//int mul(int x,int y)
+//{
+//	return x * y;
+//}
+//int div(int x,int y)
+//{
+//	return x / y;
+//}
+//int main()
+//{
+//	int x = 0,y = 0;
+//	int input = 0;
+//	//pfarr是一个函数指针数组--又名:转移表
+//	int(*pfarr[5])(int ,int) = {0,add,sub,mul,div};
+//	
+//	do 
+//	{
+//		menu();
+//		printf("Please choose:\n");
+//		scanf("%d",&input);
+//		if(input>=1&&input<=4)
+//		{
+//		printf("请输入两个数:\n");
+//		scanf("%d%d",&x,&y);
+//		int ret = pfarr[input](x,y);
+//		printf("%d\n",ret);
+//		}
+//		else if(input == 0)
+//		{
+//			printf("退出");
+//		}
+//		else
+//		{
+//			printf("选择错误\n");
+//		}
+//	}while(input);
+//	
+//	return 0;
+//}
+
+//int add(int x ,int y)
+//{
+//	return x + y;
+//}
+//int main()
+//{
+//	int arr[10] = {0};
+//	int(*p)[10] = &arr;//取出地址
+//	int (*pfarr[10])(int,int);//pfarr函数指针数组
+//	int(*(*ppfarr)[10])(int,int) = &pfarr;//指向函数指针数组的指针
+//	return 0;
+//}
+//void print(char* str)
+//{
+//	printf("hehe:%s",str);
+//}
+//void test(void(*p)(char*))
+//{
+//	printf("test\n");
+//	p("bit");
+//}
+//int main()
+//{
+//	test(print);
+//	return 0;
+//}
+//库函数 - qsort - 可以排所有数
