@@ -38,3 +38,26 @@ int main()
 	printf("%x,%x",ptr1[-1],*ptr2);
 	return 0;
 }
+//int main()
+//{
+//	int a[3][2] = {(0,1),(2,3),(4,5)};
+//	int *p;
+//	p = a[0];
+//	printf("%d",p[0]);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 1;
+//	char* ch;
+//	ch = (char*)a;
+//	printf("%d\n",ch);
+//}
+int main()
+{
+	int a[5][5];
+	int (*p)[4];
+	p = a;//int(*) [5]是a的类型,int(*)[4]是p的类型
+	printf("%p,%d\n",&p[4][2] - &a[4][2],&p[4][2] - &a[4][2]);//p[4][2] == *(*(p+4)+2)
+	return 0;
+}
