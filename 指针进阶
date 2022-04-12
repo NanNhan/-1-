@@ -116,3 +116,42 @@
 //	return 0;
 //}
 //库函数 - qsort - 可以排所有数
+
+
+#include<stdio.h>
+#include<assert.h>
+//void swap(int *x,int *y)
+//{
+//	int t = *x;
+//	*x = *y;
+//	*y = t;
+//}
+//int main()
+//{
+//	int a = 1,b = 2;
+//	swap(&a,&b);
+//	printf("a = %d,b = %d",a,b);
+//	return 0;
+//}
+//void mystrcpy(char* dest,const char *src)
+//{
+//	while((*dest++ = *src++) != '\0')
+//	{
+//	}
+//}
+//int main()
+//{
+//	char s1[32] = "hello";
+//	char s2[32] = "123456789";
+//	mystrcpy(s2,s1);
+//	printf("%s",s2);
+//	return 0;
+//}
+
+int main()
+{
+	int num = 1;
+	const int *p1 = &num;
+	p1++;
+	return 0;
+}
